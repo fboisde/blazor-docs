@@ -376,14 +376,14 @@ public class SampleResxLocalizer : ITelerikStringLocalizer
     {
         get
         {
-            return GetStringFromResource(name);
+            return GetStringFromResource(name) ?? string.Empty;
         }
     }
 
     // sample implementation - uses .resx files in the ~/Resources folder named TelerikMessages.<culture-locale>.resx
     public string GetStringFromResource(string key)
     {
-        return Resources.TelerikMessages.ResourceManager.GetString(key, Resources.TelerikMessages.Culture); ;
+        return Resources.TelerikMessages.ResourceManager.GetString(key, Resources.TelerikMessages.Culture) ?? string.Empty;
     }
 }
 ````
